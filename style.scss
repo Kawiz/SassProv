@@ -1,0 +1,49 @@
+$backgroundcolor:yellow;
+$primärfärg:green;
+
+body {
+    background-color: $backgroundcolor;
+}
+
+
+
+@function fontstyling($style) {
+    @return $style*2;
+}
+
+
+
+@mixin colorchanger($color,$color_2) {
+    color: $color;
+    background-color: $color_2;
+}
+
+
+
+@mixin border($border) {
+    border-radius: $border;
+}
+
+
+
+#complement {
+    color: complement($color: $backgroundcolor);
+}
+
+
+
+#header {
+    @include colorchanger(green,white )
+}
+
+
+
+h1 {
+    font-size: fontstyling(15px);
+}
+
+
+
+button {
+    @include border(5px);
+}
